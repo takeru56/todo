@@ -4,6 +4,9 @@ function App() {
         <Container>
             <Row>
                 <Col md={{ offset: 3, span: 6 }}>
+                    <h1>田中がやるべきことリスト</h1>
+                </Col>
+                <Col md={{ offset: 3, span: 6 }}>
                     <TodoListCard />
                 </Col>
             </Row>
