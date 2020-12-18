@@ -9,7 +9,7 @@ const {
     MYSQL_USER_FILE: USER_FILE,
     MYSQL_PASSWORD: PASSWORD,
     MYSQL_PASSWORD_FILE: PASSWORD_FILE,
-    MYSQL_DB: DB,
+    MYSQL_NAME: DB,
     MYSQL_DB_FILE: DB_FILE,
 } = process.env;
 
@@ -33,7 +33,7 @@ async function init() {
 
     return new Promise((acc, rej) => {
         pool.query(
-            'CREATE TABLE IF NOT EXISTS todo_items (id varchar(36), name varchar(255), completed boolean)',
+            'CREATE TABLE IF NOT EXISTS todo_items (id varchar(36), name varchar(255), completed boolean) DEFAULT CHARSET=utf8',
             err => {
                 if (err) return rej(err);
 
